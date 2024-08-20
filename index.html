@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header, .dashboard, footer {
+            display: none; /* Hidden initially */
+        }
+        .header {
+            background-color: #003376;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .header h3 {
+            color: #003376;
+            margin: 0;
+        }
+        .buttons {
+            display: flex;
+        }
+        .buttons button {
+            background-color: green;
+            border: none;
+            color: #003376;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: darkgreen;
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+                text-align: center;
+            }
+            .buttons {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        // Function to replace video with content after 5 seconds
+        function redirectAfterVideo() {
+            setTimeout(function() {
+                document.querySelector('.video-container').style.display = 'none';
+                document.querySelector('.header').style.display = 'flex';
+                document.querySelector('.dashboard').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+            }, 4000); // 5 seconds delay
+        }
+    </script>
+</head>
+<body>
+    <!-- Video that plays and triggers the content replacement -->
+    <div class="video-container">
+        <video  src="vidio/Hi Adee Blog App.mp4" autoplay onplay="redirectAfterVideo()" controls></video>
+    </div>
+
+    <!-- Content to be shown after the video -->
+    <div class="header">
+        <h3 style="color: white;"><span style="color: white;">Adeen</span> Blog Website</h3>
+        <div class="buttons">
+            <button style="background-color: #a6a6a6;" onclick="location.href='signup.html'">Sign Up</button>
+            <button style="background-color: #a6a6a6;" onclick="location.href='login.html'">Login</button>
+        </div>
+    </div>
+    <div class="dashboard">
+        <main>
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sint aspernatur quae? Necessitatibus.</p>
+            </section>
+            <section id="posts">
+                <h2>Manage Posts</h2>
+                <button><a id="a" href="signup.html">Create New Post</a></button>
+            </section>
+            <section id="settings">
+                <h2>Settings</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Adeen Blog</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        #Adeen {
+            position: relative;
+            display: inline-block; /* Keeps the profile image and upload icon together */
+        }
+        #profile_image {
+            width: 300px;
+            border-radius: 50%; /* Use 50% for a circular profile image */
+        }
+        #upload_icon {
+            width: 50px;
+            position: absolute;
+            bottom: 10px; /* Position the upload icon at the bottom of the profile image */
+            right: 10px;  /* Adjust as needed */
+            cursor: pointer;
+            background: white; /* Optional: To make sure it's visible on various backgrounds */
+            border-radius: 20px; /* Makes the icon round */
+            padding: 5px; /* Adds a bit of space around the icon */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="Adeen">
+            <img id="profile_image"  style="width: 270px; height: 250px;"
+                 src="https://www.zdnet.com/a/img/resize/a0dcec40a8cd8d2e1b3a9e12a05c2819622d20be/2021/07/19/8a337c80-5ed6-43a1-98fb-b981d420890f/programming-languages-shutterstock-1680857539.jpg?auto=webp&fit=crop&height=1200&width=1200" 
+                 alt="Profile Image">
+            <img id="upload_icon" 
+                 src="https://cdn-icons-png.flaticon.com/512/2956/2956744.png" 
+                 alt="Upload Icon">
+            <input type="file" id="image_input" style="display: none;" accept="image/*">
+        </div>
+       
+        <h2>Welcome to Your Profile</h2>
+        <p id="user_email"></p>
+        <p><a href="Mainpage.html">Go to Dashboard</a></p>
+        <p><a href="index.html">Logout</a></p>
+    </div>
+
+    <script type="module" src="profile.js"></script>
+</body>
+</html>

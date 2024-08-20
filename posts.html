@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* General Reset and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color:  #003376;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 103.0%;
+            box-sizing: border-box;
+            margin-left: -20px;
+            height: 100px;
+            margin-top: -20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .dashboard {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        aside {
+            background-color: #343a40;
+            color: white;
+            width: 200px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar-menu {
+            list-style-type: none;
+            /* margin-left: ; */
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: #495057;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color:  #003376;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #user_msg {
+            background-color: white;
+            border: 1px solid #d8d8d8;
+            padding: 10px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #user_msg img {
+            border-radius: 100px;
+            height: 33px;
+            width: 35px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                height: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            input[type="text"] {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header ">
+        <div class="logo">Adeen Blog</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="Mainpage.html">Home</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <aside style="margin-left: -40px; height: 622px; margin-top: -20px;">
+            <ul class="sidebar-menu">
+                <li><a href="Overview.html">Overview</a></li>
+                <li><a href="posts.html">Manage Posts</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="posts">
+                <form id="todoForm">
+                    <input type="text" id="todoValue" placeholder="Write Post">
+                    <button style="background-color: #003376;" type="submit" id="submit">Add Post</button>
+                </form>
+                <ul id="list"></ul>
+                <div id="user_msg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_oDH8hVffABWBYBBugyEzQtriV1p-hBV4DxY9KmMUXYAf39qaECv3TPBUmz83sEBFkA0&usqp=CAU" alt="">
+                    <p>Ayan Msg - hi</p>
+                </div>
+                <div id="user_msg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Mosqu%C3%A9e_Masjid_el_Haram_%C3%A0_la_Mecque.jpg" alt="">
+                    <p>Husain Msg - What happened</p>
+                </div>
+                <div id="user_msg">
+                    <img src="https://media.istockphoto.com/id/490586878/photo/macca-kabe.jpg?s=612x612&w=0&k=20&c=LpI50jR1NrAHGmP0Jin_DltwLtD1dcvldhjqRY2TP2Y=" alt="">
+                    <p>Hassan Msg - Just fun</p>
+                </div>
+                <div id="user_msg">
+                    <img src="https://st3.depositphotos.com/3226243/14395/i/450/depositphotos_143959533-stock-photo-muslim-pilgrims-from-all-over.jpg" alt="">
+                    <p>Arman Msg - For test</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="width: 103.8%; margin-left: -30px; margin-top: -30px; height: 50px;">
+        <p>&copy; 2024 Adeen Blog</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedProfileImage = localStorage.getItem("profileImage");
+            if (savedProfileImage) {
+                document.getElementById("profile_image").src = savedProfileImage;
+            }
+        });
+    </script>
+    <script src="firebase.mjs" type="module"></script>
+</body>
+</html>
